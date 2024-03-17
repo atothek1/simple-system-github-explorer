@@ -12,7 +12,7 @@ module.exports = {
         "plugin:react-hooks/recommended",
         "plugin:import/recommended"
     ],
-    ignorePatterns: ["dist', '.eslintrc.cjs", "vite-env.d.ts"],
+    ignorePatterns: ["dist', '.eslintrc.cjs", "vite.config.ts", "vite-env.d.ts"],
     parser: "@typescript-eslint/parser",
     "parserOptions": {
         "tsconfigRootDir": ".",

@@ -3,8 +3,8 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 // eslint-disable-next-line import/no-default-export
-export default defineConfig( () => {
-  
+export default defineConfig(() => {
+
     return {
         server: {
             port: 3000
@@ -12,11 +12,11 @@ export default defineConfig( () => {
         build: {
             rollupOptions: {
                 output: {
-                    manualChunks( id ) {
-                        if ( id.includes( "react" ) ) {
+                    manualChunks(id) {
+                        if (id.includes("react")) {
                             return "vendor.react";
                         }
-                        else if ( id.includes( "node_modules" ) ) {
+                        else if (id.includes("node_modules")) {
                             return "vendors";
                         }
                     }
@@ -24,6 +24,11 @@ export default defineConfig( () => {
 
             }
         },
-        plugins: [ react() ],
+        plugins: [react()],
+        test: {
+            globals: false,
+            environment: "jsdom",
+            setupFiles: "./tests/setup.js",
+        },
     };
-} );
+});
