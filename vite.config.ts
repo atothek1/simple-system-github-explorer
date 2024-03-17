@@ -1,8 +1,9 @@
-import { defineConfig } from "vite"
-import react from "@vitejs/plugin-react"
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
-export default defineConfig(() => {
+// eslint-disable-next-line import/no-default-export
+export default defineConfig( () => {
   
     return {
         server: {
@@ -11,11 +12,11 @@ export default defineConfig(() => {
         build: {
             rollupOptions: {
                 output: {
-                    manualChunks(id) {
-                        if (id.includes("react")) {
+                    manualChunks( id ) {
+                        if ( id.includes( "react" ) ) {
                             return "vendor.react";
                         }
-                        else if (id.includes("node_modules")) {
+                        else if ( id.includes( "node_modules" ) ) {
                             return "vendors";
                         }
                     }
@@ -23,6 +24,6 @@ export default defineConfig(() => {
 
             }
         },
-        plugins: [react()],
-    }
-});
+        plugins: [ react() ],
+    };
+} );

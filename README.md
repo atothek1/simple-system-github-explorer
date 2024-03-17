@@ -44,3 +44,8 @@ Here you can find a log of decision of what to do and what NOT to do. As well as
 From the UI slicedown I have identified some UI Design System components as well as some Domain specific components.
 
 This slicedown will not represent a full list of all components just an indidcator to help getting a structure into the UI.
+
+
+# Resources that i have read
+
+- https://www.robinwieruch.de/vitest-react-testing-library/
