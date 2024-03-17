@@ -32,7 +32,7 @@ Here you can find a log of decision of what to do and what NOT to do. As well as
 
 - basic design system, seperated UI components from domain specific compositional components
 - usage of Typescript
-- usage of react, swr, react-hook-form, preact-signals, styled-components, jest, react testing library
+- usage of react, swr, react-hook-form, preact-signals, styled-components, vitest, react testing library
 - usage of hooks
 - seperation of concerns for data fetching, transforming, caching integration and presentation
 
