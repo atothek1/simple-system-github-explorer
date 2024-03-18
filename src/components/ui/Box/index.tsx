@@ -23,17 +23,17 @@ function InnerBox( props: BoxProps, ref: ForwardedRef<HTMLDivElement | null> ) {
         <StyledBox
             ref={ ref }
             as={ as }
-            justifyContent={ justifyContent }
-            alignItems={ alignItems }
+            className={ className }
+            onClick={ onClick }
+            $justifyContent={ justifyContent }
+            $alignItems={ alignItems }
             $column={ column }
             $width={ width }
             $height={ height }
-            padding={ padding }
-            margin={ margin }
-            backgroundColor={ backgroundColor }
-            $gap={ gap }
-            className={ className }
-            onClick={ onClick }>
+            $padding={ padding }
+            $margin={ margin }
+            $backgroundColor={ backgroundColor }
+            $gap={ gap }>
             {children}
         </StyledBox>
     );

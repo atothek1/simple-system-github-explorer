@@ -8,8 +8,7 @@ export type BoxAllowedAsValues =
     | "aside"
     | "section"
     | "article"
-    | "nav"
-    | "form";
+    | "nav";
 
 export interface BoxProps {
     readonly children: React.ReactNode;
