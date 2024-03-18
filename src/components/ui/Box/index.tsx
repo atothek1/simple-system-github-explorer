@@ -31,7 +31,7 @@ function InnerBox( props: BoxProps, ref: ForwardedRef<HTMLDivElement | null> ) {
             padding={ padding }
             margin={ margin }
             backgroundColor={ backgroundColor }
-            gap={ gap }
+            $gap={ gap }
             className={ className }
             onClick={ onClick }>
             {children}
