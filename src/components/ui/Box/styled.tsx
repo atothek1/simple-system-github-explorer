@@ -26,4 +26,5 @@ export const StyledBox = styled.div<StyledBoxProps>`
         }
         `;
     } }
+    list-style: none;
 `;
