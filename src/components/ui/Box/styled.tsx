@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import type { BoxProps } from "./types";
 
 // redefine transient props to not be consumed by styled-components
