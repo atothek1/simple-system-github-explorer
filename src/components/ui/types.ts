@@ -11,3 +11,7 @@ export enum FlexDirection {
     ROW = "row",
     COL = "column"
 }
+
+export type StyledTransientProps<TPropsType> = {
+    readonly [Propname in keyof TPropsType as `$${ string & Propname }`]: TPropsType[Propname];
+}
