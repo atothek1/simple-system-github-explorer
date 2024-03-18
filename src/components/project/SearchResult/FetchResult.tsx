@@ -2,7 +2,7 @@ interface ResultProps {
     readonly searchTerm: string;
 }
 
-export function Result( props: ResultProps ){
+export function FetchResult( props: ResultProps ){
     const { searchTerm } = props;
     return ( <>
         Searching for 
