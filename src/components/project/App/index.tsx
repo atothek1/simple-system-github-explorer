@@ -1,9 +1,10 @@
 import { Box } from "../../ui/Box";
+import { SearchInput } from "../SearchInput";
 
 export function App() {
     return (
-        <Box>
-            <span>Hello Project World</span>
+        <Box column>
+            <SearchInput />
         </Box>
     );
 }
