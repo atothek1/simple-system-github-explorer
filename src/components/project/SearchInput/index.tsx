@@ -3,6 +3,7 @@ import { Box } from "../../ui/Box";
 import { Button } from "../../ui/Button";
 import { TextInput } from "../../ui/TextInput";
 import { useState } from "react";
+import { setSearchTerm } from "../../../state/search";
 
 interface SearchFormData { readonly userName: string }
 
@@ -17,6 +18,7 @@ export function SearchInput(){
     const handleSubmit = ( data: SearchFormData ) => {
         console.log( data );
         setIsButtonDisabled( true );
+        setSearchTerm( data.userName );
         formConfig.reset();
     };
 
