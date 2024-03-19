@@ -4,6 +4,7 @@ import { Box } from "../../ui/Box";
 import { Text } from "../../ui/Text";
 import { ArrowIcon } from "./ArrowIcon";
 import { setOpen } from "../../../state/collabsible";
+import { RepositoriesResult } from "../RepositoriesResult";
 
 interface UserListElementProps {
     readonly index: number;
@@ -26,7 +27,7 @@ function InnerUserListElement( props: UserListElementProps ) {
                 <Text fontSize="14px">{ data.name }</Text>
                 <ArrowIcon rotation={ isOpen ? "-180deg" : "0deg" } />
             </Box>
-            { isOpen && <span>Show Me</span>}
+            { isOpen && <RepositoriesResult name={ data.name } />}
         </Box>
     );
 }
