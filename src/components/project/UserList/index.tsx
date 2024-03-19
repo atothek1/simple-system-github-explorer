@@ -5,6 +5,7 @@ import { Box } from "../../ui/Box";
 import { List } from "../../ui/List";
 import { FetchDataConsumerComponent } from "../FetchDataStatus";
 import { UserListElement } from "./UserListElement";
+import { Text } from "../../ui/Text";
 
 interface UserListPorps extends FetchDataConsumerComponent<SearchUsersData | undefined> {}
 
@@ -19,6 +20,9 @@ export function UserList( props: UserListPorps ){
         return null;
     }
 
+    const { items, total } = data;
+    
+    const info = `Showing first 5 of ${ total }`;
     const additionalProps = ( index: number ) => {
         return { 
             isOpen: openId.value === index
@@ -26,12 +30,15 @@ export function UserList( props: UserListPorps ){
     };
 
     return (
-        <Box as="ul" padding="0" margin="0" width="auto" column>
-            <List
-                component={ UserListElement }
-                data={ data.items }
-                additionalProps={ additionalProps }
-            />
+        <Box column gap="8px">
+            <Text>{ info }</Text>
+            <Box as="ul" padding="0" margin="0" width="auto" column>
+                <List
+                    component={ UserListElement }
+                    data={ items }
+                    additionalProps={ additionalProps }
+                />
+            </Box>
         </Box>
     );
 }
