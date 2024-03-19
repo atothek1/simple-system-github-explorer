@@ -10,6 +10,7 @@ export const StyledText = styled.span<StyledTextProps>`
     ${ props => ( props.$fontSize ? `font-size: ${ props.$fontSize };` : "" ) }
     ${ props => ( props.$fontWeight ? `font-weight: ${ props.$fontWeight };` : "" ) }
     ${ props => ( props.$padding ? `padding: ${ props.$padding };` : "" ) }
+    ${ props => ( props.$margin ? `margin: ${ props.$margin };` : "" ) }
     ${ props => ( props.$color ? `color: ${ props.$color };` : "" ) }
     ${ props => ( props.$backgroundColor ? `background-color: ${ props.$backgroundColor };` : "" ) }
     ${ props => ( props.$noWrap ? "white-space: noWrap" : "" ) }

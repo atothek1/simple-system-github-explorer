@@ -6,6 +6,7 @@ export interface TextProps extends React.PropsWithChildren {
     readonly fontSize?: string;
     readonly fontWeight?: string;
     readonly padding?: string;
+    readonly margin?: string;
     readonly color?: string;
     readonly backgroundColor?: string;
     readonly noWrap?: boolean;

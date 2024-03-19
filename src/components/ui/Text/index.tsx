@@ -8,6 +8,8 @@ export function Text( props: TextProps ){
         fontFamily = "Helvetica",
         fontSize = "16px",
         fontWeight,
+        padding,
+        margin,
     } = props;
 
     return ( <StyledText 
@@ -15,6 +17,8 @@ export function Text( props: TextProps ){
         $fontFamily={ fontFamily }
         $fontSize={ fontSize }
         $fontWeight={ fontWeight }
+        $padding={ padding }
+        $margin={ margin }
     >
         {children}
     </StyledText> );
