@@ -19,8 +19,10 @@ export interface BoxProps {
     readonly justifyContent?: JustifyContent;
     readonly alignItems?: AlignItems;
     readonly minWidth?: string;
+    readonly maxWidth?: string;
     readonly width?: string;
     readonly minHeight?: string;
+    readonly maxHeight?: string;
     readonly height?: string;
     readonly padding?: string;
     readonly margin?: string;
