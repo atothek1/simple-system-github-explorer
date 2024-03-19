@@ -5,6 +5,7 @@ export const StyledButton = styled.button`
   width: 100%;
   background-color: #2C9DDB;
   border: none;
+  border-radius: 2px;
   color: #FFFFFF;
   &:disabled {
     color: gray;

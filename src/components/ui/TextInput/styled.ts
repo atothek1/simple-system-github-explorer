@@ -10,4 +10,7 @@ export const StyledInput = styled.input`
     color: red;
     opacity: 1;
   }
+  &:focus {
+    outline-color: #2C9DDB;
+  }
 `;

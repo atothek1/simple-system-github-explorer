@@ -24,7 +24,7 @@ export function SearchInput(){
     return ( 
         <FormProvider { ...formConfig }>
             <form onSubmit={ formConfig.handleSubmit( handleSubmit ) }>
-                <Box column gap="8px">
+                <Box column gap="16px">
                     <TextInput name="userName" placeholder="Enter username" onChange={ handleChange } />
                     <Button type="submit" disabled={ isButtonDisabled }>Search</Button>
                 </Box>
