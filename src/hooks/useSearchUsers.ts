@@ -17,6 +17,6 @@ export function useSearchUsers( userName: string, page = 1, perPage = 5 ) {
             userName,
             page,
             perPage 
-        } )
+        } ), { revalidateOnFocus: false }
     );
 }

@@ -13,6 +13,6 @@ export function useFetchRepositories( userName: string, page = 1, perPage = 5 ) 
     return useSWR( url, () =>
         fetchRepositoriesFetcher( url, { userName,
             page,
-            perPage } )
+            perPage } ), { revalidateOnFocus: false }
     );
 }
