@@ -5,6 +5,43 @@ This Project is a application task from simple system.
 I want to showcase how I structure my codebase with a way bigger project scope in mind.
 This is "overkill" for the task itself. Please keep in mind to just solve the task the implementation would be less complex and smaller.
 
+# Getting starting
+
+## install deps
+```shell
+npm i
+// npm ci 
+```
+
+## run dev server
+```shell
+npm run dev
+```
+
+## run build
+```shell
+npm run build
+```
+
+## run tests
+```shell
+npm run test
+```
+
+## run linting
+```shell
+npm run lint
+```
+
+## run type check
+```shell
+npm run type-check
+```
+
+## run ci
+```shell
+npm run ci
+```
 # Project planning
 
 The below plan is NOT a step by step workflow, a lot of steps are overlapping and can take more or less time. It should just help to understand what I have in mind.
@@ -45,6 +82,26 @@ From the UI slicedown I have identified some UI Design System components as well
 
 This slicedown will not represent a full list of all components just an indidcator to help getting a structure into the UI.
 
+# Project Sstructure
+
+<pre>
+src/
+  |-- api/          # contains framework agnostic data fetching and resolving
+  | |--fetcher/     # contains specific data fetchers
+  | |-- resolver/   # contains specific response resolver to transform 
+  | |                 response data into a clean data model
+  |-- components/   # contains all components
+  | |-- project/    # contains project specific components
+  | |-- ui/         # contains project agnostic somponents, building blocks
+  |-- hooks/        # project relevant hooks, wrapping useSWR
+  |-- state/        # simple states with preact signals
+</pre>
+
+
+# Workflow
+
+I have not worked on the project with feature branches and pull requests. In a professional environment I would 
+follow the guidelines, and definitly prefer to work with feature branches and Pull request. After successfull CI pipeline and Review i would merge.
 
 # Resources that i have read
 
