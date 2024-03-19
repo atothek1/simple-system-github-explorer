@@ -6,13 +6,15 @@ export interface FetchDataConsumerComponent<TData> {
 }
 
 interface FetchDataStatusProps<TData> {
-    readonly component: React.ComponentType<FetchDataConsumerComponent<TData>>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    readonly component: React.ComponentType<FetchDataConsumerComponent<TData> & any>;
     readonly result: FetchDataResult<TData>;
     readonly hasData: boolean;
+    readonly additionalProps?: ( data:TData ) => Record<string, unknown>;
 }
 
 export function FetchDataStatus<TData>( props: FetchDataStatusProps<TData> ) {
-    const { result, component, hasData } = props;
+    const { result, component, hasData, additionalProps = () => ( {} ) } = props;
 
     const { isLoading, error } = result;
 
@@ -35,7 +37,10 @@ export function FetchDataStatus<TData>( props: FetchDataStatusProps<TData> ) {
 
     const children =
     component !== undefined
-        ? React.createElement( component, { data: result.data } )
+        ? React.createElement( component, { 
+            data: result.data,
+            ...additionalProps( result.data ) 
+        } )
         : null;
 
     return <>{children}</>;
