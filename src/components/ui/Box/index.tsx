@@ -14,7 +14,9 @@ function InnerBox( props: BoxProps, ref: ForwardedRef<HTMLDivElement | null> ) {
         gap,
         as = "div",
         column = false,
+        minWidth,
         width = "100%",
+        minHeight,
         height = "100%",
         onClick = undefined
     } = props as ( BoxProps & { readonly className:string } );
@@ -28,7 +30,9 @@ function InnerBox( props: BoxProps, ref: ForwardedRef<HTMLDivElement | null> ) {
             $justifyContent={ justifyContent }
             $alignItems={ alignItems }
             $column={ column }
+            $minWidth={ minWidth }
             $width={ width }
+            $minHeight={ minHeight }
             $height={ height }
             $padding={ padding }
             $margin={ margin }

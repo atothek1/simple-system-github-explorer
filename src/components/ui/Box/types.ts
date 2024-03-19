@@ -18,7 +18,9 @@ export interface BoxProps {
     readonly column?: boolean;
     readonly justifyContent?: JustifyContent;
     readonly alignItems?: AlignItems;
+    readonly minWidth?: string;
     readonly width?: string;
+    readonly minHeight?: string;
     readonly height?: string;
     readonly padding?: string;
     readonly margin?: string;
