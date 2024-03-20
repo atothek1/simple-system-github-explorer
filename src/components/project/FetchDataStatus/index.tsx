@@ -1,5 +1,7 @@
 import React from "react";
 import type { FetchDataResult } from "../types";
+import { LoadingIcon } from "../LoadingIcon";
+import { Box } from "../../ui";
 
 export interface FetchDataConsumerComponent<TData> {
     readonly data: TData;
@@ -19,7 +21,7 @@ export function FetchDataStatus<TData>( props: FetchDataStatusProps<TData> ) {
     const { isLoading, error } = result;
 
     if ( isLoading ) {
-        return <p>Fetching Data.</p>;
+        return <Box margin="0 auto" width="auto"><LoadingIcon /></Box>;
     }
 
     if ( error ) {

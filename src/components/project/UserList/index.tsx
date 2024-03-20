@@ -1,5 +1,5 @@
 import { useSignals } from "@preact/signals-react/runtime";
-import { SearchUsersData } from "../../../api";
+import { FetchUsersData } from "../../../api";
 import { openId } from "../../../state/collabsible";
 import { Box } from "../../ui/Box";
 import { List } from "../../ui/List";
@@ -7,7 +7,7 @@ import { FetchDataConsumerComponent } from "../FetchDataStatus";
 import { UserListElement } from "./UserListElement";
 import { Text } from "../../ui/Text";
 
-interface UserListPorps extends FetchDataConsumerComponent<SearchUsersData | undefined> {}
+interface UserListPorps extends FetchDataConsumerComponent<FetchUsersData | undefined> {}
 
 export function UserList( props: UserListPorps ){
 

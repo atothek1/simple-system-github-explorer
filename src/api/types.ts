@@ -5,7 +5,7 @@ export interface User {
     readonly url: string;
     readonly type: string;
 }
-export interface SearchUsersData {
+export interface FetchUsersData {
     readonly total: number;
     readonly items: User[];
 }
@@ -18,7 +18,7 @@ export interface Repository {
     readonly stars: number;
     readonly url: string;
 }
-export interface UserRepositoriesData {
+export interface FetchRepositoriesData {
     readonly total: number;
     readonly items: Repository[];
 }

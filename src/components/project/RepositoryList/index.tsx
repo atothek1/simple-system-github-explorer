@@ -1,9 +1,9 @@
-import { UserRepositoriesData } from "../../../api";
+import { FetchRepositoriesData } from "../../../api";
 import { Box, List, SimplePagination } from "../../ui";
 import { FetchDataConsumerComponent } from "../FetchDataStatus";
 import { RepositoryListElement } from "./RepositoryListElement";
 
-interface RepositoryListPorps extends FetchDataConsumerComponent<UserRepositoriesData | undefined> {
+interface RepositoryListPorps extends FetchDataConsumerComponent<FetchRepositoriesData | undefined> {
     readonly onPageChange: ( page: number ) => void;
     readonly page: number;
 }

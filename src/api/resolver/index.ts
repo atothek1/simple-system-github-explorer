@@ -1,2 +1,2 @@
-export { resolveSearchUsersResponse } from "./resolveSearchUsersResponse";
+export { resolveFetchUsersResponse } from "./resolveFetchUsersResponse";
 export { resolveFetchRepositoriesResponse } from "./resolveFetchRepositoriesResponse";

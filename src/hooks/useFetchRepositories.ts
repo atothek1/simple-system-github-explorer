@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { fetchRepositoriesFetcher } from "../api/fetchRepositoriesFetcher";
+import { fetchRepositories } from "../api";
 
 // https://api.github.com/search/repositories?q=user:atothek1&per_page=5&page=1
 export function useFetchRepositories( userName: string, page = 1, perPage = 5 ) {
@@ -10,9 +10,10 @@ export function useFetchRepositories( userName: string, page = 1, perPage = 5 ) 
     } ).toString();
     //const url = `https://api.github.com/search/repositories?${queryStr}`;
     const url = `./data/repositories-${ page }.json?${ queryStr }`;
-    return useSWR( url, () =>
-        fetchRepositoriesFetcher( url, { userName,
+    return useSWR( url, () => fetchRepositories( url, 
+        { 
+            userName,
             page,
-            perPage } ), { revalidateOnFocus: false }
-    );
+            perPage 
+        } ), { revalidateOnFocus: false } );
 }

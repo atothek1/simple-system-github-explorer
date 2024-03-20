@@ -1,4 +1,4 @@
-import { UserRepositoriesData } from "..";
+import { FetchRepositoriesData } from "..";
 
 interface FetchRepositoriesResponse {
     readonly total_count: number;
@@ -14,7 +14,7 @@ interface FetchRepositoriesResponse {
 
 export function resolveFetchRepositoriesResponse(
     data: FetchRepositoriesResponse
-): UserRepositoriesData {
+): FetchRepositoriesData {
     const total = data.total_count;
     const items = data.items.map( ( item ) => {
         return {

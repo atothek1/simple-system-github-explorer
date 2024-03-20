@@ -1,6 +1,6 @@
-import { SearchUsersData } from "..";
+import { FetchUsersData } from "..";
 
-interface SearchUsersResponse {
+interface FetchUsersResponse {
     readonly total_count: number;
     readonly items: Array<{
         readonly id: number;
@@ -11,9 +11,9 @@ interface SearchUsersResponse {
     }>;
 }
 
-export function resolveSearchUsersResponse(
-    data: SearchUsersResponse
-): SearchUsersData {
+export function resolveFetchUsersResponse(
+    data: FetchUsersResponse
+): FetchUsersData {
     const total = data.total_count;
     const items = data.items
         .map( ( item ) => {
