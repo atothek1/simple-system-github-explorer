@@ -2,6 +2,7 @@ import React from "react";
 import type { FetchDataResult } from "../types";
 import { LoadingIcon } from "../LoadingIcon";
 import { Box } from "../../ui";
+import { ErrorResponse } from "../ErrorResponse";
 
 export interface FetchDataConsumerComponent<TData> {
     readonly data: TData;
@@ -25,12 +26,7 @@ export function FetchDataStatus<TData>( props: FetchDataStatusProps<TData> ) {
     }
 
     if ( error ) {
-        return (
-            <>
-                <p>Something went wrong. Please try again later.</p>
-                <pre>{error.toString()}</pre>
-            </>
-        );
+        return <ErrorResponse />;
     }
 
     if ( !hasData ) {
