@@ -9,7 +9,8 @@ import { SearchResult } from ".";
 import { searchTerm } from "../../../state/search";
 
 const handlers = [
-    http.get( /\/data\/usersSearch\.json/i, () => {
+    //http.get( /\/data\/usersSearch\.json/i, () => {
+    http.get( /\/search\/users/i, () => {
         return HttpResponse.json( responseData ); } 
     )
 ];

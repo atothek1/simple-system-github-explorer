@@ -11,12 +11,12 @@ import responseData2 from "../../../../public/data/repositories-2.json";
 import { RepositoriesResult } from ".";
 
 const handlers = [
-    http.get( /\/data\/repositories-1\.json/i, () => {
-        return HttpResponse.json( responseData1 ); } 
+    //http.get( /\/data\/repositories-1\.json/i, () => {
+    http.get( /\/search\/repositories/i, ( { request } ) => {        
+        const url = new URL( request.url );
+        const page = url.searchParams.get( "page" );
+        return HttpResponse.json( page === "1" ? responseData1 : responseData2 ); } 
     ),
-    http.get( /\/data\/repositories-2\.json/i, () => {
-        return HttpResponse.json( responseData2 ); } 
-    )
 ];
 const server = setupServer( ...handlers );
 

@@ -8,8 +8,8 @@ export function useFetchRepositories( userName: string, page = 1, perPage = 5 ) 
         page: page.toString(),
         per_page: perPage.toString(),
     } ).toString();
-    //const url = `https://api.github.com/search/repositories?${queryStr}`;
-    const url = `./data/repositories-${ page }.json?${ queryStr }`;
+    const url = `https://api.github.com/search/repositories?${ queryStr }`;
+    // const url = `./data/repositories-${ page }.json?${ queryStr }`;
     // const url = `./data/missing-priviliges.json?${ queryStr }`;
     return useSWR( url, () => fetchRepositories( url, 
         { 
