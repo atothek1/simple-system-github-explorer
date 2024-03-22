@@ -1,7 +1,7 @@
 import React from "react";
 import type { FetchDataResult } from "../types";
 import { LoadingIcon } from "../LoadingIcon";
-import { Box } from "../../ui";
+import { Box, Text } from "../../ui";
 import { ErrorResponse } from "../ErrorResponse";
 
 export interface FetchDataConsumerComponent<TData> {
@@ -30,7 +30,7 @@ export function FetchDataStatus<TData>( props: FetchDataStatusProps<TData> ) {
     }
 
     if ( !hasData ) {
-        return <p>No Data found.</p>;
+        return <Text>No Data found.</Text>;
     }
 
     const children =
