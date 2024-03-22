@@ -14,7 +14,7 @@ export function SimplePagination( props: SimplePaginationProps ){
     const { total, page, size, onPrev, onNext } = props;
     const prevEnabled = total > size && page > 1;
     const nextEnabled = total > size * page;
-    const maxPages = Math.floor( total / size );
+    const maxPages = Math.ceil( total / size );
 
     const infoText = `Showing page ${ page } / ${ maxPages } with a total of ${ total } entries.`;
     return (

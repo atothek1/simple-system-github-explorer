@@ -26,11 +26,14 @@ export function RepositoryList( props: RepositoryListPorps ){
     const { items, total } = data;
 
     return (
-        <Box as="ul" padding="0" margin="0" gap="8px" column>
-            <List
-                component={ RepositoryListElement }
-                data={ items }
-            />
+        <Box gap="8px" column>
+            <Box as="ul" padding="0" margin="0" gap="8px" column>
+                <List
+                    component={ RepositoryListElement }
+                    data={ items }
+                />
+            
+            </Box>
             { total > 5 ? <SimplePagination 
                 total={ total } 
                 page={ page } 
