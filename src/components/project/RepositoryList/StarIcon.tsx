@@ -4,7 +4,6 @@ interface StarIconProps {
 
 export function StarIcon( props:StarIconProps ) {
     const { width = "24px" } = props;
-    console.log( "width", width );
     return (
         <svg width={ width } viewBox="0 0 24 24" id="star_filled" data-name="star filled" xmlns="http://www.w3.org/2000/svg">
             <rect id="Rectangle_4" data-name="Rectangle 4" width="24" height="24" fill="none"/>
