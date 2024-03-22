@@ -26,6 +26,7 @@ export interface BoxProps {
     readonly height?: string;
     readonly padding?: string;
     readonly margin?: string;
+    readonly border?: string;
     readonly backgroundColor?: string;
     readonly gap?: string;
     readonly onClick?: ( event: React.MouseEvent ) => void;

@@ -19,6 +19,7 @@ export const StyledBox = styled.div<StyledBoxProps>`
     ${ props => ( props.$padding ? `padding: ${ props.$padding };` : "" ) }
     ${ props => ( props.$margin ? `margin: ${ props.$margin };` : "" ) }
     ${ props => ( props.$backgroundColor ? `background-color: ${ props.$backgroundColor };` : "" ) }
+    ${ props => ( props.$border ? `border: ${ props.$border };` : "" ) }
     ${ ( props ) => {
        
         if ( !props.$gap ) {

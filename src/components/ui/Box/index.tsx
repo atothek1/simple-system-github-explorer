@@ -11,6 +11,7 @@ function InnerBox( props: BoxProps, ref: ForwardedRef<HTMLDivElement | null> ) {
         padding,
         margin,
         backgroundColor,
+        border,
         gap,
         as = "div",
         column = false,
@@ -41,6 +42,7 @@ function InnerBox( props: BoxProps, ref: ForwardedRef<HTMLDivElement | null> ) {
             $padding={ padding }
             $margin={ margin }
             $backgroundColor={ backgroundColor }
+            $border={ border }
             $gap={ gap }>
             {children}
         </StyledBox>
