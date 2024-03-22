@@ -10,10 +10,14 @@ export function useFetchRepositories( userName: string, page = 1, perPage = 5 ) 
     } ).toString();
     //const url = `https://api.github.com/search/repositories?${queryStr}`;
     const url = `./data/repositories-${ page }.json?${ queryStr }`;
+    // const url = `./data/missing-priviliges.json?${ queryStr }`;
     return useSWR( url, () => fetchRepositories( url, 
         { 
             userName,
             page,
             perPage 
-        } ), { revalidateOnFocus: false } );
+        } ), { 
+        revalidateOnFocus: false,
+        errorRetryCount: 0 
+    } );
 }

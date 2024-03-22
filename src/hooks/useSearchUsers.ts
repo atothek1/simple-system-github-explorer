@@ -9,11 +9,14 @@ export function useSearchUsers( userName: string, page = 1, perPage = 5 ) {
         page: page.toString(),
         per_page: perPage.toString(),
     } ).toString();
-    //const url = `https://api.github.com/search/users?${queryStr}`;
+    // const url = `https://api.github.com/search/users?${queryStr}`;
     const url = "./data/usersSearch.json?" + queryStr;
     return useSWR( url, () => fetchUsers( url, { 
         userName,
         page,
         perPage 
-    } ), { revalidateOnFocus: false } );
+    } ),  { 
+        revalidateOnFocus: false,
+        errorRetryCount: 0 
+    } );
 }
