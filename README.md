@@ -7,41 +7,14 @@ This is "overkill" for the task itself. Please keep in mind to just solve the ta
 
 # Getting starting
 
-## install deps
+## cloning and running dev server locally
 ```shell
-npm i
-// npm ci 
-```
-
-## run dev server
-```shell
+git clone https://github.com/atothek1/simple-system-github-explorer 
+cd simple-system-github-explorer
+npm run i
 npm run dev
 ```
 
-## run build
-```shell
-npm run build
-```
-
-## run tests
-```shell
-npm run test
-```
-
-## run linting
-```shell
-npm run lint
-```
-
-## run type check
-```shell
-npm run type-check
-```
-
-## run ci
-```shell
-npm run ci
-```
 # Project planning
 
 The below plan is NOT a step by step workflow, a lot of steps are overlapping and can take more or less time. It should just help to understand what I have in mind.
@@ -60,9 +33,9 @@ Here you can find a log of decision of what to do and what NOT to do. As well as
 
 ## what you can NOT expect
 
-- integrataion of I18N
-- usage of a Router like React Router or TanStack Router
-- a complex state mangement with Redux, RxJS or a like
+- integrataion of I18N, would bloatup the solution even more, but in big projects a MUST
+- usage of a Router like React Router or TanStack Router, same as for I18N, 
+- a complex state mangement with Redux, RxJS or a like, have not the need for it,
 - End 2 End test with Cypress or playwright
 
 ## what you can find:
@@ -87,7 +60,7 @@ This slicedown will not represent a full list of all components just an indidcat
 <pre>
 src/
   |-- api/          # contains framework agnostic data fetching and resolving
-  | |--fetcher/     # contains specific data fetchers
+  | |-- fetcher/     # contains specific data fetchers
   | |-- resolver/   # contains specific response resolver to transform 
   | |                 response data into a clean data model
   |-- components/   # contains all components
@@ -100,9 +73,49 @@ src/
 
 # Workflow
 
+## Git
 I have not worked on the project with feature branches and pull requests. In a professional environment I would 
 follow the guidelines, and definitly prefer to work with feature branches and Pull request. After successfull CI pipeline and Review i would merge.
+
+## Testing
+
+I have wrote only a small set of test for the more complexer parts. Also they are not 100% complete, I just wanted to show how to write integrate testing into a project.
+
+
 
 # Resources that i have read
 
 - https://www.robinwieruch.de/vitest-react-testing-library/
+
+
+# NPM scripts
+
+## run dev server
+```shell
+npm run dev
+```
+
+## run build
+```shell
+npm run build
+```
+
+## run tests
+```shell
+npm run test
+```
+
+## run linting
+```shell
+npm run lint
+```
+
+## run type checking
+```shell
+npm run type-check
+```
+
+## run lint, test, type.check and build in one command
+```shell
+npm run ci
+```
