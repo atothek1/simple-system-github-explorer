@@ -46,6 +46,12 @@ Here you can find a log of decision of what to do and what NOT to do. As well as
 - usage of hooks
 - seperation of concerns for data fetching, transforming, caching integration and presentation
 
+# Notes:
+
+As the public usage of the github rest api is ratelimited i have not implemented a sophisticated Error handling.
+A simple error handling within the fetch logic will expose the rendering of a generic error message component without any further details.
+
+I a professional project error handling and tracing a crucial task and needs to be handled properly. With trace ids, error reporting and error communication.
 
 # UI Slice Down
 
@@ -54,6 +60,16 @@ Here you can find a log of decision of what to do and what NOT to do. As well as
 From the UI slicedown I have identified some UI Design System components as well as some Domain specific components.
 
 This slicedown will not represent a full list of all components just an indidcator to help getting a structure into the UI.
+
+# Missing UI states
+
+During the UI design review and Slicedown I have identified some missing states and potential informations.
+please find below a list with solutions i have applied.
+
+- missing inactive Button state: if the search input is empty i would deactivate the button and tint it gray until at least 3 chars entered
+- missing empty search result screen/text: i would just show a message like: No result found for "..."
+- missing pagination UI for the Repository list, i would add a simple pagination UI by myself
+- missing Error Screen, if the search results in an Error I would display: Something unexpected happened, pls try again later.
 
 # Project Sstructure
 
@@ -74,6 +90,7 @@ src/
 # Workflow
 
 ## Git
+
 I have not worked on the project with feature branches and pull requests. In a professional environment I would 
 follow the guidelines, and definitly prefer to work with feature branches and Pull request. After successfull CI pipeline and Review i would merge.
 
@@ -81,11 +98,22 @@ follow the guidelines, and definitly prefer to work with feature branches and Pu
 
 I have wrote only a small set of test for the more complexer parts. Also they are not 100% complete, I just wanted to show how to write integrate testing into a project.
 
+## Error handling
 
+I have implemented only a very basic error handling without any further information.
+
+# Quick Gallery
+
+<img src="./docs/img/start-state.png" width="200">
+<img src="./docs/img/input-state.png" width="200">
+<img src="./docs/img/result-1-state.png" width="200">
+<img src="./docs/img/error-state.png" width="200">
+<img src="./docs/img/result-2-state.png" width="200">
 
 # Resources that i have read
 
 - https://www.robinwieruch.de/vitest-react-testing-library/
+- https://vitest.dev/
 
 
 # NPM scripts
