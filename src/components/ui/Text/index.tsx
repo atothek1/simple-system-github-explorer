@@ -10,6 +10,7 @@ export function Text( props: TextProps ){
         fontWeight,
         padding,
         margin,
+        color
     } = props;
 
     return ( <StyledText 
@@ -19,6 +20,7 @@ export function Text( props: TextProps ){
         $fontWeight={ fontWeight }
         $padding={ padding }
         $margin={ margin }
+        $color={ color }
     >
         {children}
     </StyledText> );
