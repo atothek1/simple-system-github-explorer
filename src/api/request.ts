@@ -10,14 +10,13 @@ export async function request<TIn, TOut>( url: string, options: RequestOptions<T
     // NOTE: quirky casting for default resolver value
     const { delayTime = 1000, resolver = ( o: TIn ): TOut => ( o as unknown as TOut ) } = options;
     
-    await delay( delayTime );
+    //await delay( delayTime );
 
     const response = await fetch( url );
-    
-    if ( !response.ok ) {
-        throw new Error( response.statusText );
+    const data = await response.json();
+    if ( !response.ok || "errors" in data ) {
+        throw new Error(  );
     }
     
-    const data = await response.json();
     return Promise.resolve( resolver( data ) );
 }
