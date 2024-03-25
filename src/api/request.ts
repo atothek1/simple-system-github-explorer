@@ -2,7 +2,7 @@ import { delay } from "./utils";
 
 interface RequestOptions<TIn, TOut> {
     readonly delayTime?: number;
-    readonly resolver?: ( data:TIn ) => TOut; 
+    readonly resolver?: ( data:TIn, response: Response ) => TOut; 
 }
 
 export async function request<TIn, TOut>( url: string, options: RequestOptions<TIn, TOut> ): Promise<TOut> {
@@ -20,5 +20,5 @@ export async function request<TIn, TOut>( url: string, options: RequestOptions<T
         throw new Error(  );
     }
     
-    return Promise.resolve( resolver( data ) );
+    return Promise.resolve( resolver( data, response ) );
 }

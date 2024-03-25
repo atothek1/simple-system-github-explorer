@@ -16,7 +16,12 @@ export async function fetchRepositories(
         return Promise.resolve( 
             { 
                 total: 0, 
-                items: [] 
+                items: [],
+                meta: { 
+                    rateLimit: Number.POSITIVE_INFINITY,
+                    rateLimitRemaining: Number.POSITIVE_INFINITY,
+                    rateLimitReset: new Date()
+                }                
             } );
     }
     return request( url, { resolver: resolveFetchRepositoriesResponse } );

@@ -1,4 +1,5 @@
 import { FetchUsersData } from "..";
+import { extractResponseMetaData } from "../utils";
 
 interface FetchUsersResponse {
     readonly total_count: number;
@@ -12,7 +13,8 @@ interface FetchUsersResponse {
 }
 
 export function resolveFetchUsersResponse(
-    data: FetchUsersResponse
+    data: FetchUsersResponse,
+    response: Response
 ): FetchUsersData {
     const total = data.total_count;
     const items = data.items
@@ -26,6 +28,9 @@ export function resolveFetchUsersResponse(
             };
         } )
         .splice( 0, 5 );
-    return { total,
-        items };
+    return {
+        total,
+        items,
+        meta: extractResponseMetaData( response )
+    };
 }
