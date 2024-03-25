@@ -6,6 +6,7 @@ import { List } from "../../ui/List";
 import { FetchDataConsumerComponent } from "../FetchDataStatus";
 import { UserListElement } from "./UserListElement";
 import { Text } from "../../ui/Text";
+import { RateLimitInfo } from "../RateLimitInfo";
 
 interface UserListPorps extends FetchDataConsumerComponent<FetchUsersData | undefined> {}
 
@@ -20,7 +21,7 @@ export function UserList( props: UserListPorps ){
         return null;
     }
 
-    const { items, total } = data;
+    const { items, total, meta } = data;
     
     const info = `Showing first 5 of ${ total }`;
     const additionalProps = ( index: number ) => {
@@ -39,6 +40,7 @@ export function UserList( props: UserListPorps ){
                     additionalProps={ additionalProps }
                 />
             </Box>
+            <RateLimitInfo limit={ meta.rateLimit } remaining={ meta.rateLimitRemaining } reset={ meta.rateLimitReset } />
         </Box>
     );
 }

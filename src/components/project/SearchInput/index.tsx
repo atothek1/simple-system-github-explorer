@@ -5,7 +5,7 @@ import { Button } from "../../ui/Button";
 import { TextInput } from "../../ui/TextInput";
 import { setSearchTerm } from "../../../state/search";
 
-interface SearchFormData { readonly userName: string }
+interface SearchFormData { readonly searchTerm: string }
 
 export function SearchInput(){
     const [ isButtonDisabled, setIsButtonDisabled ] = useState( true );
@@ -17,7 +17,7 @@ export function SearchInput(){
 
     const handleSubmit = ( data: SearchFormData ) => {
         setIsButtonDisabled( true );
-        setSearchTerm( data.userName );
+        setSearchTerm( data.searchTerm );
         formConfig.reset();
     };
 
@@ -25,7 +25,12 @@ export function SearchInput(){
         <FormProvider { ...formConfig }>
             <form onSubmit={ formConfig.handleSubmit( handleSubmit ) }>
                 <Box column gap="16px">
-                    <TextInput name="userName" placeholder="Enter username" onChange={ handleChange } />
+                    <TextInput
+                        name="searchTerm" 
+                        placeholder="Enter username" 
+                        description="min. 3 chars."
+                        onChange={ handleChange }
+                    />
                     <Button type="submit" disabled={ isButtonDisabled }>Search</Button>
                 </Box>
             </form>

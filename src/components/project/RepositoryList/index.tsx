@@ -1,6 +1,7 @@
 import { FetchRepositoriesData } from "../../../api";
 import { Box, List, SimplePagination } from "../../ui";
 import { FetchDataConsumerComponent } from "../FetchDataStatus";
+import { RateLimitInfo } from "../RateLimitInfo";
 import { RepositoryListElement } from "./RepositoryListElement";
 
 interface RepositoryListPorps extends FetchDataConsumerComponent<FetchRepositoriesData | undefined> {
@@ -23,10 +24,11 @@ export function RepositoryList( props: RepositoryListPorps ){
         onPageChange( page );
     };
     
-    const { items, total } = data;
+    const { items, total, meta } = data;
 
     return (
         <Box gap="8px" column>
+            <RateLimitInfo limit={ meta.rateLimit } remaining={ meta.rateLimitRemaining } reset={ meta.rateLimitReset } />
             <Box as="ul" padding="0" margin="0" gap="8px" column>
                 <List
                     component={ RepositoryListElement }
