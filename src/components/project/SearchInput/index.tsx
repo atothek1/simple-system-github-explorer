@@ -4,6 +4,7 @@ import { Box } from "../../ui/Box";
 import { Button } from "../../ui/Button";
 import { TextInput } from "../../ui/TextInput";
 import { setSearchTerm } from "../../../state/search";
+import { resetOpenId } from "../../../state/collabsible";
 
 interface SearchFormData { readonly searchTerm: string }
 
@@ -18,6 +19,7 @@ export function SearchInput(){
     const handleSubmit = ( data: SearchFormData ) => {
         setIsButtonDisabled( true );
         setSearchTerm( data.searchTerm );
+        resetOpenId();
         formConfig.reset();
     };
 
