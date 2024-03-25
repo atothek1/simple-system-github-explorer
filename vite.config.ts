@@ -9,21 +9,21 @@ export default defineConfig(() => {
         server: {
             port: 3000
         },
-        /*build: {
+        build: {
             rollupOptions: {
                 output: {
                     manualChunks(id) {
-                        if (id.includes("react")) {
+                        if (id.match(/node_modules\/react(.*)/i) || id.match(/node_modules\/scheduler(.*)/i) ) {
                             return "vendor.react";
                         }
-                        else if (id.includes("node_modules")) {
+                        else if (id.match(/node_modules(.*)/i)) {
                             return "vendors";
                         }
                     }
                 }
 
             }
-        },*/
+        },
         plugins: [react({
             babel:{
                 "plugins": [["module:@preact/signals-react-transform"]]
