@@ -27,7 +27,7 @@ function InnerUserListElement( props: UserListElementProps ) {
                 <Text fontSize="14px">{ data.name }</Text>
                 <ArrowIcon rotation={ isOpen ? "-180deg" : "0deg" } />
             </Box>
-            { isOpen && <RepositoriesResult name={ data.name } />}
+            { isOpen && <RepositoriesResult name={ data.name } /> }
         </Box>
     );
 }
