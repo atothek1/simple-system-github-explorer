@@ -9,13 +9,14 @@ interface RepositoryListElementProps {
 }
 export function RepositoryListElement( props: RepositoryListElementProps ) {
     const { data } = props;
+    const formatedStars = new Intl.NumberFormat( "en-US", { notation: "compact" } ).format( data.stars );
     return (
         <Box as="li" backgroundColor="#E0E0E0" padding="12px" width="auto" minHeight="100px" margin="0 0 0 24px" column>
             <Box justifyContent="space-between">
                 <Text as="h3" padding="0" margin="0">{ data.name }</Text>
                 <Box alignItems="center" width="auto" gap="8px">
                     <StarIcon width="18px"/>
-                    <Text>{ data.stars }</Text>
+                    <Text>{ formatedStars }</Text>
                 </Box>
             </Box>
             <Text as="p">{ data.description }</Text>
