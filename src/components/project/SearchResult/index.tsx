@@ -7,12 +7,9 @@ export function SearchResult(){
     if( searchTerm.value === "" ) {
         return null;
     }
-    const str = `"${ searchTerm.value }"`;
+    const infoStr = `Search Result for "${ searchTerm.value }"`;
     return ( <>
-        <Text as="h1">
-            Search Result for 
-            { str }
-        </Text>
+        <Text as="h1">{ infoStr }</Text>
         <FetchResult searchTerm={ searchTerm.value } />
     </> );
 }

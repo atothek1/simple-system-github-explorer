@@ -30,7 +30,7 @@ describe( "SearchResult", () => {
     it( "should render heading", async () => {
         searchTerm.value = "test";
         const { getByRole } = render( <SearchResult /> );
-        const headingValue = "Search Result for\"test\"";
+        const headingValue = "Search Result for \"test\"";
 
         expect( getByRole( "heading" ) ).toHaveTextContent( headingValue );
     } );
